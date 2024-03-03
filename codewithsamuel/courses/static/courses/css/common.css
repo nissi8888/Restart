@@ -1,0 +1,363 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  max-width: 100%;  /*also tried 100vw and 100%*/
+  overflow-x: hidden;
+}
+
+
+.price{
+    font-size: 20px;
+}
+
+.display-6{
+  font-size: 30px;
+}
+
+.display-5{
+  font-size:  55px;
+}
+
+.overflow-y-scroll{
+    overflow-y: scroll;
+}
+
+.active-video{
+  background-color: rgb(255, 41, 41);
+  color:red;
+}
+
+.span2{
+  width: 40%;
+  height: 50%;
+  color: rgb(255,41,41);
+  padding: 18px;
+  border: 1px solid red;
+  border-radius: 10px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.span2:hover{
+  border: 2px solid blue;
+}
+
+
+.span3{
+  width: 40%;
+  height: 50%;
+  color: rgb(255, 41, 41);
+  border: 1px solid rgb(255, 41, 41);
+  padding: 18px;
+  align-items: flex-end;
+  justify-content: center;
+  border-radius: 10px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.span3:hover{
+  border: 2px solid blue;
+}
+
+.edit{
+  transition: all 0.3s;
+}
+
+.edit:hover{
+  transform: scale(1.1);
+}
+
+.rectangle-1{
+  position: relative;
+  border-radius: 15px;
+  left: 180px;
+  align-items: center;
+}
+
+.domain {
+
+  width: 25%;
+  position: relative;
+  font-family: 'Afacad';
+  font-size: 20px;
+  text-decoration: none;
+  border-radius:36px;
+  display:inline-block;
+  overflow:hidden;
+  background:#cccccc;
+  border:1px solid #cccccc;
+  bottom: 240px;left: 750px;
+
+}
+
+.domainbox{
+  width:100%;
+  height:40px;
+  border:0px;
+  outline:none;
+  z-index: 1;
+}
+
+.qualify{
+  width: 25%;
+  border-radius: 10px;
+  font-family: 'Afacad';
+  font-size: 20px;
+  position: relative;
+  bottom: 150px;left: 365px;
+  background: none;
+  border-radius:36px;
+  display:inline-block;
+  overflow:hidden;
+  background:#cccccc;
+  border:1px solid #cccccc;
+}
+
+.qualifybox{
+  width:100%;
+  height:40px;
+  border:0px;
+  outline:none;
+  z-index: 1;
+}
+
+.explore{
+  width: 15%;
+  font-family: 'Afacad';
+  font-size: 22px;
+  color: white;
+  background: #ff0059;
+  text-decoration: none;
+  padding: 0px;
+  position: relative;
+  border: 1px solid red;
+  border-radius: 15px;
+  bottom: 80px;left: 48px;
+}
+
+
+
+.banner2{
+  position: relative;
+  left: 130px;
+  border: 1px solid #ff0059;
+  padding: 10px;
+  border-radius: 28px;
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  z-index: -1;
+}
+
+.vertical {
+  position: relative;
+  border-left: 2px solid grey;
+  top: 20px;
+  height: 50px;
+}
+
+@keyframes slide{
+  from{
+    transform: translate(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.partners{
+  overflow: hidden;
+  padding: 60px 0;
+  background: #fff;
+  white-space: nowrap;
+  position: relative;
+}
+
+.partners::before,.partners::after{
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.partners::before{
+  left: 0;
+  background: linear-gradient(to right,rgba(255,255,255,0), white);
+}
+
+
+.partners::after{
+  right: 0;
+  background: linear-gradient(to right,rgba(255,255,255,0), white);
+}
+
+.partners:hover .partners-slide{
+  animation-play-state: paused;
+}
+
+.partners-slide{
+  white-space: nowrap;
+  animation: 35s slide infinite linear;
+  display: inline-block;
+}
+
+
+.card-courses{
+  border-radius: 25px;
+  background-color: #fff;
+}
+
+
+/* Slider for Card */
+
+.wrapper {
+  background-color: #ffffff;
+  position: absolute;
+  width: 80vw;
+  max-width: 80em;
+  min-height: 25em;
+  border-radius: 0.6em;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  box-shadow: 0 1.8em 3em rgba(1, 17, 39, 0.15);
+  display: flex;
+}
+.testimonial-container {
+  width: 85%;
+  height: 100%;
+  position: relative;
+  margin: auto;
+  padding: 1.8em 1.2em;
+}
+.wrapper button {
+  font-size: 1.8em;
+  height: 2.2em;
+  width: 2.2em;
+  background-color: #ffffff;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  border: none;
+  color: rgb(255, 41, 41);
+  box-shadow: 0 0 1em rgba(1, 17, 39, 0.25);
+  cursor: pointer;
+  border-radius: 50%;
+}
+button#next {
+  right: -1.1em;
+}
+button#prev {
+  left: -1.1em;
+}
+.testimonial-container p {
+  color: #8c8c90;
+  text-align: center;
+  font-size: 0.9em;
+  line-height: 2em;
+  letter-spacing: 0.05em;
+}
+.testimonial-container img {
+  display: block;
+  margin: 1.8em auto 1.25em auto;
+  border-radius: 50%;
+  width: 4.4em;
+}
+.testimonial-container h3 {
+  color: rgb(255, 41, 41);
+  font-size: 1em;
+  text-align: center;
+}
+.testimonial-container h6 {
+  color: #161617;
+  font-size: 0.9em;
+  letter-spacing: 0.03em;
+  font-weight: 400;
+  text-align: center;
+}
+@media screen and (max-width: 650px) {
+  .wrapper {
+    font-size: 14px;
+  }
+}
+
+
+  /* Footer */
+  .container-footer{
+    max-width: 1170px;
+    margin:auto;
+  }
+  .row-footer{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .ul-footer{
+    list-style: none;
+  }
+  .footer{
+    background-color: #24262b;
+      padding: 70px 0;
+  }
+  .footer-col{
+     width: 25%;
+     padding: 0 15px;
+  }
+  .footer-col h4{
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+  }
+  .footer-col h4::before{
+    content: '';
+    position: absolute;
+    left:0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+  }
+  .footer-col ul li:not(:last-child){
+    margin-bottom: 10px;
+  }
+  .footer-col ul li a{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  .footer-col ul li a:hover{
+    color: #fd1d1d;
+    padding-left: 8px;
+  }
+  .footer-col .social-links a{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255,255,255,0.2);
+    margin:0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+  }
+  .footer-col .social-links a:hover{
+    color: #ffffff;
+    background-color: #fd1d1d;
+  }
+  
+  
+       

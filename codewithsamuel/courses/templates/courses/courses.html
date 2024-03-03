@@ -1,0 +1,122 @@
+{% extends 'courses/base.html' %}
+{% load course_custom_tags %}
+{%block title%}Courses
+{% endblock %}
+{%block content%}
+
+<style>
+    .price {
+        font-size: 20px;
+    }
+</style>
+
+{% load static %}
+
+
+
+
+
+<h1 align="center" style="font-family: 'Afacad';">Our <span style="color:  rgb(255, 41, 41);">Courses</span></h1>
+<br>
+<br>
+<hr>
+<div class="container">
+    <br>
+    <div class="row">
+        {% for course in courses %}
+        <div class="col mx-auto">
+            <div class="card edit m-lg-2 shadow" style="width: 18rem;">
+                <img class="card-img-top" src="{{course.thumbnail.url}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{course.name}}</h5>
+                    <p class="card-text m-0 p-0">
+                        Save ₹{{course.discount}}
+                        <br>
+                        <span class="price">
+                            <del>{{course.price|rupee}}</del>
+                            &nbsp;
+
+                            <span>{% cal_sellprice course.price course.discount as value %} {{value|rupee}}</span>
+                        </span>
+
+                    </p>
+                </div>
+
+                <div class="card-footer p-0">
+                    {% is_enrolled request course as enrolled %}
+
+
+                    <div class="row no-gutters">
+                        {% if enrolled %}
+                        <div class="col border-right">
+                            <a href="/course/{{course.slug}}" class="btn btn-danger w-100 ">Start Course</a>
+                        </div>
+                        {% else %}
+                        <div class="col border-right">
+                            <a href="/check-out/{{course.slug}}" class="btn btn-light w-100">Enroll Now</a>
+                        </div>
+                        <div class="col">
+                            <a href="/course/{{course.slug}}" class="btn btn-light w-100">Show More</a>
+                        </div>
+                        {% endif %}
+                    </div>
+
+                </div>
+                
+            </div>
+            <hr>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+<footer class="footer">
+    <div class="container-footer">
+      <div class="row-footer">
+        <div class="footer-col">
+          <h4>upScale</h4>
+          <ul class="ul-footer">
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Store</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Help</h4>
+          <ul class="ul-footer">
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">shipping</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Order Status</a></li>
+            <li><a href="#">Payment Options</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Our Courses</h4>
+          <ul class="ul-footer">
+            <li><a href="#">Online Cerifications</a></li>
+            <li><a href="#">UG Courses</a></li>
+            <li><a href="#">PG Courses</a></li>
+            <li><a href="#">Bootcamps</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+ </footer>
+
+{%endblock%}

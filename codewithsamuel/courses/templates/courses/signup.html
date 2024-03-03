@@ -1,0 +1,80 @@
+{% extends 'courses/base.html' %}
+{% load course_custom_tags %}
+{% load static %}
+{%block title%}
+Signup
+{% endblock %}
+
+{%block content%}
+
+<div class="container">
+   <h1 class="display-1" align="center" style="position: relative; left:20px" >Signup<span style="color: rgb(255, 41, 41);"> Page</span></h1>
+   <br>
+   <hr>
+   <br>
+
+   <div>
+      <form action="/signup" method="POST" class="border p-2" align="center">
+         {% csrf_token %}
+         {{form.as_p}}
+
+
+
+         <input class="btn btn-danger edit" type="submit" value="Register">
+      </form>
+   </div>
+   <hr>
+</div>
+<div>
+  <img src="{% static 'courses/images/sign.gif' %}" alt="" height="300" width="200" style="position: relative; left: 180px;bottom: 450px;border-radius: 10px;">
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<footer class="footer">
+   <div class="container-footer">
+     <div class="row-footer">
+       <div class="footer-col">
+         <h4>upScale</h4>
+         <ul class="ul-footer">
+           <li><a href="#">About us</a></li>
+           <li><a href="#">Store</a></li>
+           <li><a href="#">Privacy Policy</a></li>
+           <li><a href="#">Terms and Conditions</a></li>
+         </ul>
+       </div>
+       <div class="footer-col">
+         <h4>Get Help</h4>
+         <ul class="ul-footer">
+           <li><a href="#">FAQ</a></li>
+           <li><a href="#">shipping</a></li>
+           <li><a href="#">Returns</a></li>
+           <li><a href="#">Order Status</a></li>
+           <li><a href="#">Payment Options</a></li>
+         </ul>
+       </div>
+       <div class="footer-col">
+         <h4>Our Courses</h4>
+         <ul class="ul-footer">
+           <li><a href="#">Online Cerifications</a></li>
+           <li><a href="#">UG Courses</a></li>
+           <li><a href="#">PG Courses</a></li>
+           <li><a href="#">Bootcamps</a></li>
+         </ul>
+       </div>
+       <div class="footer-col">
+         <h4>Follow Us</h4>
+         <div class="social-links">
+           <a href="#"><i class="fab fa-facebook-f"></i></a>
+           <a href="#"><i class="fab fa-twitter"></i></a>
+           <a href="#"><i class="fab fa-instagram"></i></a>
+           <a href="#"><i class="fab fa-linkedin-in"></i></a>
+         </div>
+       </div>
+     </div>
+   </div>
+</footer>
+
+{%endblock%}

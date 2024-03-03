@@ -1,0 +1,94 @@
+{% extends 'courses/base.html' %}
+{% load course_custom_tags %}
+{%block title%}
+Signup
+{% endblock %}
+
+{%block content%}
+
+<div class="container">
+   <br>
+   <br>
+   <p class="display-5" align="center">My <span style="color: rgb(255,41,41);" >Courses</span></p>
+   <br>
+   <hr>
+
+   <div class="row">
+      {% for uc in user_courses %}
+      <div class="col mx-auto">
+         
+          <div class="card edit m-lg-2 shadow" style="width: 18rem;">
+              <img class="card-img-top" src="{{uc.course.thumbnail.url}}" alt="Card image cap">
+              <div class="card-body">
+                  <h5 class="card-title">{{uc.course.name}}</h5>
+                  
+              </div>
+
+              <div class="card-footer p-0">
+                  
+                  <div class="row no-gutters">
+                      
+                      <div class="col border-right">
+                          <a href="/course/{{uc.course.slug}}" class="btn btn-danger w-100">Start Course</a>
+                      </div>
+                     
+                  </div>
+
+              </div>
+          </div>
+          <hr>
+          <br>
+      </div>
+      {% endfor %}
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<footer class="footer">
+   <div class="container-footer">
+     <div class="row-footer">
+       <div class="footer-col">
+         <h4>upScale</h4>
+         <ul class="ul-footer">
+           <li><a href="#">About us</a></li>
+           <li><a href="#">Store</a></li>
+           <li><a href="#">Privacy Policy</a></li>
+           <li><a href="#">Terms and Conditions</a></li>
+         </ul>
+       </div>
+       <div class="footer-col">
+         <h4>Get Help</h4>
+         <ul class="ul-footer">
+           <li><a href="#">FAQ</a></li>
+           <li><a href="#">shipping</a></li>
+           <li><a href="#">Returns</a></li>
+           <li><a href="#">Order Status</a></li>
+           <li><a href="#">Payment Options</a></li>
+         </ul>
+       </div>
+       <div class="footer-col">
+         <h4>Our Courses</h4>
+         <ul class="ul-footer">
+           <li><a href="#">Online Cerifications</a></li>
+           <li><a href="#">UG Courses</a></li>
+           <li><a href="#">PG Courses</a></li>
+           <li><a href="#">Bootcamps</a></li>
+         </ul>
+       </div>
+       <div class="footer-col">
+         <h4>Follow Us</h4>
+         <div class="social-links">
+           <a href="#"><i class="fab fa-facebook-f"></i></a>
+           <a href="#"><i class="fab fa-twitter"></i></a>
+           <a href="#"><i class="fab fa-instagram"></i></a>
+           <a href="#"><i class="fab fa-linkedin-in"></i></a>
+         </div>
+       </div>
+     </div>
+   </div>
+</footer>
+
+{%endblock%}

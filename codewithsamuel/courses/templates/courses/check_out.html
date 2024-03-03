@@ -1,0 +1,187 @@
+{% extends 'courses/base.html' %}
+{% load course_custom_tags %}
+{% load static %}
+{% block title %}
+Login Page
+{% endblock %}
+
+{% block content %}
+
+{% block css %}
+    {% endblock %}
+
+
+
+
+<div class="container-fluid">
+    <br>
+    <br>  
+
+   
+
+   <div class="row ">
+    <div class="col mr-auto ">
+        <div class="card ms-auto edit" style="width: 18rem;">
+            <img src="{{course.thumbnail.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{course.name}}</h5>
+            <p class="card-text m-0 p-0">
+               Save  {{course.discount}}
+               <br>
+               <span class="price">
+                <del>{{course.price|rupee}}</del>
+                &nbsp;
+                <span>{% cal_sellprice course.price course.discount as value %} {{value|rupee}}</span>
+               </span>
+
+           
+            </p>
+
+            </div>
+
+           
+    </div>
+
+   </div>
+
+   <div class="col">
+        <div>
+            <p class="display-5" >{{course.name}}</p><hr width="50%">
+
+            {% if coupon %}
+
+            <p class="alert alert-primary border">
+                Coupon Code Apllied
+                You Have Got :₹{{coupon.discount}}
+            </p>
+
+            <p class="display-5">Total Amount : <b>{% cal_sellprice course.price coupon.discount as value %} {{value|rupee}}</b></p>
+
+            <a class="btn btn-danger edit border" href="?action=create_payment&couponcode={{coupon.code}}">Continue to Payment</a>
+
+            {% else %}
+
+            <p class="display-5">Total Amount : <b>{% cal_sellprice course.price course.discount as value %} {{value|rupee}}</b></p>
+            
+            
+
+            
+            <a class="btn btn-danger edit border" href="?action=create_payment">Continue to Payment</a>
+
+
+            {% endif %}
+          
+        </div>
+        <br>
+        <div class="border p-5 rounded border-danger">
+            {% if coupon_code_message %}
+            <div class="alert alert-danger">
+                {{coupon_code_message}}
+            </div>
+            {% endif %}
+            <p>Coupon Code!</p>
+          
+            <form action="" method="get">
+                <div class="col-lg-5 mb-3">
+                    <input type="text" name="couponcode" class="form-control" id="">
+                </div>
+                <div class="mb-3">
+                    <input type="submit" value="Apply" class="btn btn-danger edit">
+                </div>
+            </form>
+        </div>
+        <div>
+          <img src="{% static 'courses/images/coupon.gif' %}" alt="" width="40%" height="160" style="position: relative; left: 400px;bottom: 200px;border-radius: 10px;">
+        </div>
+        <div>
+          <img src="{% static 'courses/images/payment.gif' %}" alt="" height="350" style="position: relative; right: 800px;bottom: 450px;border-radius: 10px;">
+        </div>
+   </div>
+
+<div> 
+    <footer class="footer">
+       <div class="container-footer">
+         <div class="row-footer">
+           <div class="footer-col">
+             <h4>upScale</h4>
+             <ul class="ul-footer">
+               <li><a href="#">About us</a></li>
+               <li><a href="#">Store</a></li>
+               <li><a href="#">Privacy Policy</a></li>
+               <li><a href="#">Terms and Conditions</a></li>
+             </ul>
+           </div>
+           <div class="footer-col">
+             <h4>Get Help</h4>
+             <ul class="ul-footer">
+               <li><a href="#">FAQ</a></li>
+               <li><a href="#">shipping</a></li>
+               <li><a href="#">Returns</a></li>
+               <li><a href="#">Order Status</a></li>
+               <li><a href="#">Payment Options</a></li>
+             </ul>
+           </div>
+           <div class="footer-col">
+             <h4>Our Courses</h4>
+             <ul class="ul-footer">
+               <li><a href="#">Online Cerifications</a></li>
+               <li><a href="#">UG Courses</a></li>
+               <li><a href="#">PG Courses</a></li>
+               <li><a href="#">Bootcamps</a></li>
+             </ul>
+           </div>
+           <div class="footer-col">
+             <h4>Follow Us</h4>
+             <div class="social-links">
+               <a href="#"><i class="fab fa-facebook-f"></i></a>
+               <a href="#"><i class="fab fa-twitter"></i></a>
+               <a href="#"><i class="fab fa-instagram"></i></a>
+               <a href="#"><i class="fab fa-linkedin-in"></i></a>
+             </div>
+           </div>
+         </div>
+       </div>
+    </footer>    
+
+    {% if order is not None %}
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+
+<script>
+   var options = {
+    "key": "rzp_test_ME9hURxSI2K7p7", // Enter the Key ID generated from the Dashboard
+    "name": "upScale", //your business name 
+    "description": "Payment For  {{course.name}}",
+    "image": "https://cdn.pixabay.com/photo/2017/03/16/21/18/logo-2150297_640.png",
+    "order_id": "{{order.id}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+    "callback_url": "http://localhost:8000/verify_payment",
+    "prefill": { //We recommend using the prefill parameter to auto-fill customer's contact information especially their phone number
+        "name": "{{user.first_name}}", //your customer's name
+        "email": "{{user.email}}", //Provide the customer's phone number for better conversion rates 
+    },
+    "notes": {
+        "address": "Razorpay Corporate Office"
+    },
+    "theme": {
+        "color": "#ff2929"
+    }
+};
+var rzp1 = new Razorpay(options);
+
+rzp1.open();
+
+
+</script>
+{% endif  %}
+
+{% if error is not None %}
+<script>
+    window.onload = ()=> {
+        alert("{{error}}") 
+    }
+</script>
+
+{% endif %}
+
+
+{% endblock %}

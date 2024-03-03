@@ -1,0 +1,232 @@
+{% extends 'courses/base.html' %}
+{% load course_custom_tags %}
+{%block title%}Courses
+{% endblock %}
+{%block content%}
+
+
+
+
+<style>
+    .price {
+        font-size: 20px;
+    }
+</style>
+
+{% load static %}
+<section>
+  <div class="alert shadow-sm" role="alert" style="background-color: #f9e1fe;text-align: center;color: black;">
+   Don't miss out! The next Batch starts on 08-03-2024 Don't miss out!
+   </div>
+  <br>
+ <nav aria-label="breadcrumb">
+ <ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="/">Home ></a></li>
+ <li class="breadcrumb-item"><a href="courses">UG Courses></a></li>
+<li class="breadcrumb-item active" aria-current="page">Courses</li>
+</ol>
+ </nav>
+ 
+ <br>
+
+ <div class="banner">
+ <img class="rectangle-1 shadow" src="{% static 'courses/images/banner.png' %}" />
+ </div>
+
+ <div class="banners2">
+   <div class="domain">
+    
+     <form >
+      <select class="domainbox" name="courses">
+        <option value="" style="background: #fff;" align="center">Select Your Domain</option>
+        <option value="" style="background: #fff;" align="center">MBA</option>
+        <option value="" style="background: #fff;" align="center">B.sc</option>
+        <option value="" style="background: #fff;" align="center">M.sc</option>
+        <option value="" style="background: #fff;" align="center">BBA</option>
+        <option value="" style="background: #fff;" align="center">B.tech</option>
+        <option value="" style="background: #fff;" align="center">M.tech</option>
+        <option value="" style="background: #fff;" align="center">B.com</option>
+        <option value="" style="background: #fff;" align="center">MCA</option>
+        <option value="" style="background: #fff;" align="center">M.com</option>
+      </select>
+     </form>
+   </div>
+  
+   <div class="qualify">
+     <select class="qualifybox">
+       <option value="" style="background: #fff;" align="center">Select your highest qualification</option>
+       <option value="" style="background: #fff;" align="center">Completed Bachelors or UG Degree</option>
+       <option value="" style="background: #fff;" align="center">Completed Post Graduation </option>
+       <option value="" style="background: #fff;" align="center">Pursuing Bachelors or UG Degree</option>
+       <option value="" style="background: #fff;" align="center">In class 12th or below</option>
+     </select>
+   </div>
+
+   <a href="/courses" class="btn btn-danger explore">Explore Courses</a> 
+  </div><br><br><br>
+
+  <div class="banner2 shadow"> 
+    <h2 style="font-size: 22px; color: #fd1d1d;position: relative;top: 10px; " align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10 Million+ <br><p style="text-decoration: none; color: black;" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Learners Have Trusted Us</p></h2><div align="center" class = "vertical"></div>
+    <h2 style="font-size: 20px;  color: #fd1d1d; position: relative;top: 10px;" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;50% <br><p style="text-decoration: none; color: black;" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Average Salary Hike</p></h2> <div align="center" class = "vertical"></div>
+    <h2 style="font-size: 20px;  color: #fd1d1d; position: relative;top: 10px;" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;88% <br><p style="text-decoration: none; color: black;" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Happy with Outcome</p></h2>
+  </div>
+  <br>
+  <br>
+  <br><br>
+</section>
+<br>
+<br>
+<section>
+  
+<div class="partners ">
+  <h1 style="text-align: center;font-family: 'Rajdhani';position: relative; right: 8px;" >Our <span style="color: #fd1d1d;">Top Recruiters</span></h1><br>
+<div class="partners-slide">
+  <hr width="200%">
+  <img  style="position: relative;" src="{% static 'courses/images/accenture.png' %}" alt="" height="80">&nbsp;
+  <img style="position: relative;top:4px;" src="{% static 'courses/images/microsoft.png' %}" alt="" height="80">&nbsp;
+  <img  style="position: relative;top: 8px;" src="{% static 'courses/images/google.png' %}" alt="" height="40">&nbsp;
+  <img  style="position: relative;top: 18px;" src="{% static 'courses/images/amazon.png' %}" alt="" height="80">
+  <img  style="position: relative;top: 5px;" src="{% static 'courses/images/facebook.png' %}" alt="" height="80">&nbsp;
+  <img  style="position: relative;top: 5px;" src="{% static 'courses/images/flipkart.png' %}" alt="" height="80">&nbsp;
+  <img  style="position: relative;top: 5px;" src="{% static 'courses/images/visa.png' %}" alt="" height="40">&nbsp;&nbsp;
+  <img  style="position: relative;top: 5px;" src="{% static 'courses/images/myntra.png' %}" alt="" height="80">&nbsp;&nbsp;
+  <img  style="position: relative;top: 5px;" src="{% static 'courses/images/jio.png' %}" alt="" height="70">&nbsp;&nbsp;
+  <img  style="position: relative;top: 5px;" src="{% static 'courses/images/infosys.png' %}" alt="" height="40">
+  <hr width="200%">
+</div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="aage">
+ <h2 style="font-size: 40px ; position: relative ;right: 28px;" align="center">Aage<span style="color: #fd1d1d;text-align: center;position: relative; right: 2px;font-size: 40px;" align="center"> Ki Socho </span></h2><br><br>
+</div>
+<hr>
+<br>
+<br>
+
+
+<div class="container-fluid">
+              
+  <br>
+    <div class="row">
+      <div class="col mx-auto">
+        <div class="card edit mx-auto shadow" style="width: 18rem;">
+          <img src="{% static 'courses/images/BTechCSE.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">B.Tech CSE</h5>
+            <p class="card-text">BTech CSE is a 4 year UG course that studies practical and theoretical knowledge of computer hardware and software.</p>
+            <div class="col"> 
+              <a href="#" class="btn btn-danger w-100">Show More</a>
+          </div>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="col mx-auto">
+        <div class="card edit mx-auto shadow" style="width: 18rem;">
+          <img src="{% static 'courses/images/BCOM.png' %}" class="card-img-top" >
+          <div class="card-body">
+            <h5 class="card-title">B.com Computers</h5>
+            <p class="card-text">Bachelor of Commerce. It is an undergraduate degree program that focuses on various aspects of commerce and business</p>
+            <div class="col">
+              <a href="#" class="btn btn-danger w-100">Show More</a>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col mx-auto">
+        <div class="card edit mx-auto shadow" style="width: 18rem;">
+          <img src="{% static 'courses/images/Blog-1.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">B.tech Mechanical</h5>
+            <p class="card-text">B.Tech in Mechanical Engineering is an UG degree program that helps the principles  of mechanical engineering.</p>
+            <div class="col">
+              <a href="#" class="btn btn-danger w-100">Show More</a>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+       <br>
+    <a href="/courses" class="btn btn-danger w-20 edit" style="position: relative; left: 670px;">Explore Programs</a>
+</div>
+</section>
+
+<br>
+<hr>
+<br>
+<br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+<h1 style="position: relative;bottom: 220px;left: 30%;">Reviews: <span style="color: rgb(255, 41, 41);">A Testimony to What We Do</span></h1>
+<p  style="position: relative;bottom: 220px;left: 42%;" > See what our learners have to say about us</p>
+<div class="wrapper">
+<div class="testimonial-container" id="testimonial-container"></div>
+<button id="prev">&lt;</button>
+<button id="next">&gt;</button>
+</div>
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br>
+<br>
+<br>
+<br>
+
+
+<footer class="footer">
+    <div class="container-footer">
+      <div class="row-footer">
+        <div class="footer-col">
+          <h4>upScale</h4>
+          <ul class="ul-footer">
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Store</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Help</h4>
+          <ul class="ul-footer">
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">shipping</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Order Status</a></li>
+            <li><a href="#">Payment Options</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Our Courses</h4>
+          <ul class="ul-footer">
+            <li><a href="#">Online Cerifications</a></li>
+            <li><a href="#">UG Courses</a></li>
+            <li><a href="#">PG Courses</a></li>
+            <li><a href="#">Bootcamps</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+ </footer>
+
+{%endblock%}
