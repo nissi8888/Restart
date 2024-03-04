@@ -11,4 +11,8 @@
             "dest": "codewithsamuel/wsgi.py"
         }
     ]
+    {
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ]
 }
